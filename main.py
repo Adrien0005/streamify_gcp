@@ -74,11 +74,11 @@ def generate_event(songs, users):
 
 def publish_event_pubsub(event):
     try:
-    # Publishes a JSON message to Pub/Sub
+        # Publishes a JSON message to Pub/Sub
         message_json = json.dumps(event)
         message_bytes = message_json.encode("utf-8")
         
-        future = publisher.publish(topic_path, message_bytes)
+        publisher.publish(topic_path, message_bytes)
         print('Published to Pub/Sub')
 
     except Exception as e:
