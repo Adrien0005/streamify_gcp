@@ -1,0 +1,402 @@
+[
+    {
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "album": "A Night at the Opera",
+        "length": "5:55",
+        "release_year": 1975,
+        "genre": "Rock"
+    },
+    {
+        "title": "Imagine",
+        "artist": "John Lennon",
+        "album": "Imagine",
+        "length": "3:03",
+        "release_year": 1971,
+        "genre": "Rock"
+    },
+    {
+        "title": "Billie Jean",
+        "artist": "Michael Jackson",
+        "album": "Thriller",
+        "length": "4:54",
+        "release_year": 1983,
+        "genre": "Pop"
+    },
+    {
+        "title": "Like a Rolling Stone",
+        "artist": "Bob Dylan",
+        "album": "Highway 61 Revisited",
+        "length": "6:13",
+        "release_year": 1965,
+        "genre": "Rock"
+    },
+    {
+        "title": "Smells Like Teen Spirit",
+        "artist": "Nirvana",
+        "album": "Nevermind",
+        "length": "5:01",
+        "release_year": 1991,
+        "genre": "Grunge"
+    },
+    {
+        "title": "Hey Jude",
+        "artist": "The Beatles",
+        "album": "The Beatles (White Album)",
+        "length": "7:11",
+        "release_year": 1968,
+        "genre": "Rock"
+    },
+    {
+        "title": "Purple Rain",
+        "artist": "Prince",
+        "album": "Purple Rain",
+        "length": "8:41",
+        "release_year": 1984,
+        "genre": "Rock"
+    },
+    {
+        "title": "What's Going On",
+        "artist": "Marvin Gaye",
+        "album": "What's Going On",
+        "length": "3:53",
+        "release_year": 1971,
+        "genre": "Soul"
+    },
+    {
+        "title": "Stairway to Heaven",
+        "artist": "Led Zeppelin",
+        "album": "Led Zeppelin IV",
+        "length": "8:02",
+        "release_year": 1971,
+        "genre": "Rock"
+    },
+    {
+        "title": "Respect",
+        "artist": "Aretha Franklin",
+        "album": "I Never Loved a Man the Way I Love You",
+        "length": "2:27",
+        "release_year": 1967,
+        "genre": "Soul"
+    },
+    {
+        "title": "Born to Run",
+        "artist": "Bruce Springsteen",
+        "album": "Born to Run",
+        "length": "4:31",
+        "release_year": 1975,
+        "genre": "Rock"
+    },
+    {
+        "title": "Hotel California",
+        "artist": "Eagles",
+        "album": "Hotel California",
+        "length": "6:30",
+        "release_year": 1977,
+        "genre": "Rock"
+    },
+    {
+        "title": "The Times They Are A-Changin'",
+        "artist": "Bob Dylan",
+        "album": "The Times They Are A-Changin'",
+        "length": "3:15",
+        "release_year": 1964,
+        "genre": "Folk"
+    },
+    {
+        "title": "Strawberry Fields Forever",
+        "artist": "The Beatles",
+        "album": "Magical Mystery Tour",
+        "length": "4:07",
+        "release_year": 1967,
+        "genre": "Psychedelic Rock"
+    },
+    {
+        "title": "Good Vibrations",
+        "artist": "The Beach Boys",
+        "album": "Smiley Smile",
+        "length": "3:39",
+        "release_year": 1966,
+        "genre": "Pop"
+    },
+    {
+        "title": "Like a Prayer",
+        "artist": "Madonna",
+        "album": "Like a Prayer",
+        "length": "5:39",
+        "release_year": 1989,
+        "genre": "Pop"
+    },
+    {
+        "title": "Wonderwall",
+        "artist": "Oasis",
+        "album": "(What's the Story) Morning Glory?",
+        "length": "4:18",
+        "release_year": 1995,
+        "genre": "Rock"
+    },
+    {
+        "title": "Superstition",
+        "artist": "Stevie Wonder",
+        "album": "Talking Book",
+        "length": "4:26",
+        "release_year": 1972,
+        "genre": "Funk"
+    },
+    {
+        "title": "Sweet Child o' Mine",
+        "artist": "Guns N' Roses",
+        "album": "Appetite for Destruction",
+        "length": "5:56",
+        "release_year": 1987,
+        "genre": "Rock"
+    },
+    {
+        "title": "Dancing Queen",
+        "artist": "ABBA",
+        "album": "Arrival",
+        "length": "3:51",
+        "release_year": 1976,
+        "genre": "Pop"
+    },
+    {
+        "title": "Uptown Funk",
+        "artist": "Mark Ronson ft. Bruno Mars",
+        "album": "Uptown Special",
+        "length": "4:30",
+        "release_year": 2014,
+        "genre": "Funk"
+    },
+    {
+        "title": "Shape of You",
+        "artist": "Ed Sheeran",
+        "album": "÷ (Divide)",
+        "length": "3:53",
+        "release_year": 2017,
+        "genre": "Pop"
+    },
+    {
+        "title": "Despacito",
+        "artist": "Luis Fonsi & Daddy Yankee ft. Justin Bieber",
+        "album": "Vida",
+        "length": "3:49",
+        "release_year": 2017,
+        "genre": "Reggaeton"
+    },
+    {
+        "title": "Rolling in the Deep",
+        "artist": "Adele",
+        "album": "21",
+        "length": "3:48",
+        "release_year": 2010,
+        "genre": "Pop"
+    },
+    {
+        "title": "Blinding Lights",
+        "artist": "The Weeknd",
+        "album": "After Hours",
+        "length": "3:20",
+        "release_year": 2019,
+        "genre": "Synth-pop"
+    },
+    {
+        "title": "Old Town Road",
+        "artist": "Lil Nas X ft. Billy Ray Cyrus",
+        "album": "7",
+        "length": "2:37",
+        "release_year": 2019,
+        "genre": "Country Rap"
+    },
+    {
+        "title": "Havana",
+        "artist": "Camila Cabello ft. Young Thug",
+        "album": "Camila",
+        "length": "3:37",
+        "release_year": 2017,
+        "genre": "Pop"
+    },
+    {
+        "title": "Someone Like You",
+        "artist": "Adele",
+        "album": "21",
+        "length": "4:45",
+        "release_year": 2011,
+        "genre": "Pop"
+    },
+    {
+        "title": "Royals",
+        "artist": "Lorde",
+        "album": "Pure Heroine",
+        "length": "3:10",
+        "release_year": 2013,
+        "genre": "Art Pop"
+    },
+    {
+        "title": "Happy",
+        "artist": "Pharrell Williams",
+        "album": "G I R L",
+        "length": "3:53",
+        "release_year": 2013,
+        "genre": "Soul"
+    },
+    {
+        "title": "Shake It Off",
+        "artist": "Taylor Swift",
+        "album": "1989",
+        "length": "3:39",
+        "release_year": 2014,
+        "genre": "Pop"
+    },
+    {
+        "title": "Thinking Out Loud",
+        "artist": "Ed Sheeran",
+        "album": "x",
+        "length": "4:41",
+        "release_year": 2014,
+        "genre": "Pop"
+    },
+    {
+        "title": "All About That Bass",
+        "artist": "Meghan Trainor",
+        "album": "Title",
+        "length": "3:11",
+        "release_year": 2014,
+        "genre": "Pop"
+    },
+    {
+        "title": "Blank Space",
+        "artist": "Taylor Swift",
+        "album": "1989",
+        "length": "3:51",
+        "release_year": 2014,
+        "genre": "Pop"
+    },
+    {
+        "title": "See You Again",
+        "artist": "Wiz Khalifa ft. Charlie Puth",
+        "album": "Furious 7: Original Motion Picture Soundtrack",
+        "length": "3:50",
+        "release_year": 2015,
+        "genre": "Hip-Hop"
+    },
+    {
+        "title": "Roar",
+        "artist": "Katy Perry",
+        "album": "Prism",
+        "length": "3:42",
+        "release_year": 2013,
+        "genre": "Pop"
+    },
+    {
+        "title": "Can't Stop the Feeling!",
+        "artist": "Justin Timberlake",
+        "album": "Trolls: Original Motion Picture Soundtrack",
+        "length": "3:56",
+        "release_year": 2016,
+        "genre": "Pop"
+    },
+    {
+        "title": "Hello",
+        "artist": "Adele",
+        "album": "25",
+        "length": "4:55",
+        "release_year": 2015,
+        "genre": "Pop"
+    },
+    {
+        "title": "Stay With Me",
+        "artist": "Sam Smith",
+        "album": "In the Lonely Hour",
+        "length": "2:52",
+        "release_year": 2014,
+        "genre": "Soul"
+    },
+    {
+        "title": "Chandelier",
+        "artist": "Sia",
+        "album": "1000 Forms of Fear",
+        "length": "3:36",
+        "release_year": 2014,
+        "genre": "Pop"
+    },
+    {
+        "title": "Bad Guy",
+        "artist": "Billie Eilish",
+        "album": "When We All Fall Asleep, Where Do We Go?",
+        "length": "3:14",
+        "release_year": 2019,
+        "genre": "Electropop"
+    },
+    {
+        "title": "Shallow",
+        "artist": "Lady Gaga & Bradley Cooper",
+        "album": "A Star Is Born Soundtrack",
+        "length": "3:36",
+        "release_year": 2018,
+        "genre": "Country Rock"
+    },
+    {
+        "title": "7 Rings",
+        "artist": "Ariana Grande",
+        "album": "Thank U, Next",
+        "length": "2:58",
+        "release_year": 2019,
+        "genre": "Pop"
+    },
+    {
+        "title": "Sicko Mode",
+        "artist": "Travis Scott",
+        "album": "Astroworld",
+        "length": "5:12",
+        "release_year": 2018,
+        "genre": "Hip-Hop"
+    },
+    {
+        "title": "Sunflower",
+        "artist": "Post Malone & Swae Lee",
+        "album": "Spider-Man: Into the Spider-Verse",
+        "length": "2:38",
+        "release_year": 2018,
+        "genre": "Pop"
+    },
+    {
+        "title": "Dynamite",
+        "artist": "BTS",
+        "album": "BE",
+        "length": "3:19",
+        "release_year": 2020,
+        "genre": "Disco-pop"
+    },
+    {
+        "title": "Watermelon Sugar",
+        "artist": "Harry Styles",
+        "album": "Fine Line",
+        "length": "2:54",
+        "release_year": 2019,
+        "genre": "Pop rock"
+    },
+    {
+        "title": "Levitating",
+        "artist": "Dua Lipa",
+        "album": "Future Nostalgia",
+        "length": "3:23",
+        "release_year": 2020,
+        "genre": "Disco-pop"
+    },
+    {
+        "title": "Drivers License",
+        "artist": "Olivia Rodrigo",
+        "album": "SOUR",
+        "length": "4:02",
+        "release_year": 2021,
+        "genre": "Pop"
+    },
+    {
+        "title": "Blinding Lights",
+        "artist": "The Weeknd",
+        "album": "After Hours",
+        "length": "3:20",
+        "release_year": 2019,
+        "genre": "Synth-pop"
+    }
+]
