@@ -11,6 +11,6 @@ options:
 
 
 # Explanation:
-# steps: Builds and pushes the Docker image, just like your gcloud builds submit command.
+# steps: Builds and pushes the Docker image, just like gcloud builds submit command.
 # $PROJECT_ID: Automatically substituted by Cloud Build with your GCP project ID.
-# images: Tells Cloud Build to push the image to Google Container Registry. #}
+# images: Tells Cloud Build to push the image to Google Container Registry.
