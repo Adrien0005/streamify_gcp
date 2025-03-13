@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw_stream_data
+    database: dt-dta-adrien-sandbox-dev  
+    schema: raw_music_stream  
+    tables:
+    # Dimensions
+      - name: raw_songs_dim
+      - name: raw_users_dim
+    # Facts
+      - name: function_music_events
+      - name: dataflow_music_events
