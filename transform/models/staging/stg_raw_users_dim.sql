@@ -26,5 +26,4 @@ with source as (
     from renamed
   )
 
-  select * from final
-    
+  select * from final  
