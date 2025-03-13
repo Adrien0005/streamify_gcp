@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/dbt-streamify:latest', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/dbt-streamify:latest']
+images:
+  - 'gcr.io/$PROJECT_ID/dbt-streamify:latest'
+
+
+
+# Explanation:
+# steps: Builds and pushes the Docker image, just like your gcloud builds submit command.
+# $PROJECT_ID: Automatically substituted by Cloud Build with your GCP project ID.
+# images: Tells Cloud Build to push the image to Google Container Registry. #}

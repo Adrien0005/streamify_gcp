@@ -1,8 +1,5 @@
 # start colima
 
-# Open dbt project
-cd transform/
-
 # Build and push the container to Google Container Registry
 gcloud builds submit --tag gcr.io/dt-dta-adrien-sandbox-dev/dbt-streamify:latest
 

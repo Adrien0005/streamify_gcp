@@ -5,7 +5,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Copy your dbt project files
-COPY . .
+COPY transform/. .
 
 # Install dependencies
 RUN pip install -r requirements.txt
