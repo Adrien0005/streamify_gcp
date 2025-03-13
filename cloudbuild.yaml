@@ -5,6 +5,8 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/dbt-streamify:latest']
 images:
   - 'gcr.io/$PROJECT_ID/dbt-streamify:latest'
+options:
+  logging: CLOUD_LOGGING_ONLY
 
 
 
