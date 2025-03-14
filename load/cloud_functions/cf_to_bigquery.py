@@ -4,12 +4,6 @@ from google.cloud import bigquery  # type: ignore
 import json
 import os
 
-
-## REQ.TXT
-# functions-framework
-# google-cloud-bigquery
-# python-dotenv
-
 #Initialize Bigquery Client
 client = bigquery.Client()
 
