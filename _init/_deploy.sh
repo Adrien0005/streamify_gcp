@@ -6,13 +6,13 @@
 
 # setup dataflow
 
-# build & push docker image
-gcloud builds submit --tag gcr.io/dt-dta-adrien-sandbox-dev/dbt-streamify:latest
+# Build and push the container to Google Container Registry
+gcloud builds submit --tag gcr.io/${PROJECT_ID}/${CLOUD_RUN_NAME}:latest
 
-# create cloud run based on latest docker image
-gcloud run jobs create dbt-streamify \
-  --image gcr.io/dt-dta-adrien-sandbox-dev/dbt-streamify:latest \
-  --region us-central1 
+# Deploy a Cloud Run job
+gcloud run jobs create ${CLOUD_RUN_NAME} \
+  --image gcr.io/${PROJECT_ID}/${CLOUD_RUN_NAME}:latest \
+  --region ${REGION}
 
 # schedule the dbt run
 gcloud scheduler jobs create http dbt-scheduler-job \
