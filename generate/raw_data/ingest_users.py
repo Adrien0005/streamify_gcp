@@ -20,12 +20,12 @@ RAW_USERS_TABLE_ID = f'{PROJECT_ID}.{RAW_USERS_TABLE}'
 def read_user_data():
     # Get all files matching 'users_data_*.json' from the bucket
     bucket = storage_client.get_bucket("streamify_gcp")
-    blobs = bucket.list_blobs(prefix="users_data_", delimiter=None)
+    blobs = bucket.list_blobs(prefix="users_", delimiter=None)
     
     # Combine data from all matching files
     all_data = []
     for blob in blobs:
-        if blob.name.endswith(".json") and "users_data_" in blob.name:
+        if blob.name.endswith(".json") and "users_data" in blob.name and "schema" not in blob.name:
             data = json.loads(blob.download_as_string())
             all_data.extend(data)  # Assuming each file contains a list of records
             print(f"ℹ️ Loaded {blob.name}")
