@@ -34,13 +34,14 @@ models:
     # Config indicated by + and applies to all files under models/example/
     staging:
       +materialized: view
+      +schema: streamify_staging
     marts:
       +materialized: table
     
   dbt_artifacts:
-    +schema: dbt_artifacts # optional, default is your target schema
+    +schema: streamify_dbt_artifacts # optional, default is your target schema
     staging:
-      +schema: dbt_artifacts # optional, default is your target schema
+      +schema: streamify_dbt_artifacts # optional, default is your target schema
 
 on-run-end:
   - "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
