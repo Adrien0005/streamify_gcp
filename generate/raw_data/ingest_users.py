@@ -13,9 +13,9 @@ client = bigquery.Client()
 # Initialize GCS Client
 storage_client = storage.Client()
 
-DIM_DIM_RAW_USERS_TABLE = os.environ['DIM_DIM_RAW_USERS_TABLE']
+DIM_RAW_USERS_TABLE = os.environ['DIM_RAW_USERS_TABLE']
 PROJECT_ID = os.environ['PROJECT_ID']
-DIM_RAW_USERS_TABLE_ID = f'{PROJECT_ID}.{DIM_DIM_RAW_USERS_TABLE}'
+DIM_RAW_USERS_TABLE_ID = f'{PROJECT_ID}.{DIM_RAW_USERS_TABLE}'
 BUCKET_NAME=os.environ['BUCKET_NAME']
 
 def read_user_data():
