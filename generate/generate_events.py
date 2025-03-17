@@ -13,7 +13,7 @@ import concurrent.futures
 load_dotenv()
 
 PROJECT_ID = os.environ['PROJECT_ID']
-TOPIC_ID = os.environ['TOPIC_ID']
+PUBUSB_TOPIC = os.environ['PUBUSB_TOPIC']
 
 # MQTT Broker Configuration (No Auth)
 MQTT_BROKER = os.environ['MQTT_BROKER']
@@ -44,12 +44,12 @@ if not users:
 events = ['login', 'play', 'pause', 'next', 'previous']
 
 # Define events volume
-events_per_second = 5
+events_per_second = 10
 interval = 1.0 / events_per_second
 
 # Initialize Pub/Sub publisher client
 publisher = pubsub_v1.PublisherClient()
-topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID)
+topic_path = publisher.topic_path(PROJECT_ID, PUBUSB_TOPIC)
 
 # Initialize MQTT client
 client = mqtt.Client()

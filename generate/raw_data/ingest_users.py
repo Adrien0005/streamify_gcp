@@ -13,9 +13,9 @@ client = bigquery.Client()
 # Initialize GCS Client
 storage_client = storage.Client()
 
-RAW_USERS_TABLE = os.environ['RAW_USERS_TABLE_ID']
+DIM_DIM_RAW_USERS_TABLE = os.environ['DIM_DIM_RAW_USERS_TABLE']
 PROJECT_ID = os.environ['PROJECT_ID']
-RAW_USERS_TABLE_ID = f'{PROJECT_ID}.{RAW_USERS_TABLE}'
+DIM_RAW_USERS_TABLE_ID = f'{PROJECT_ID}.{DIM_DIM_RAW_USERS_TABLE}'
 
 def read_user_data():
     # Get all files matching 'users_data_*.json' from the bucket
@@ -34,7 +34,7 @@ def read_user_data():
         raise ValueError("No matching users_data_*.json files found in gs://streamify_gcp")
     return all_data
 
-def create_bigquery_table(RAW_USERS_TABLE):
+def create_bigquery_table(DIM_RAW_USERS_TABLE):
     # Read schema from GCS
     bucket = storage_client.get_bucket("streamify_gcp")
     schema_blob = bucket.blob("users_data_schema.json")
@@ -42,21 +42,21 @@ def create_bigquery_table(RAW_USERS_TABLE):
     
     try:
         # Check if the table already exists
-        client.get_table(RAW_USERS_TABLE)  # This will raise NotFound if table doesn't exist
-        print(f"ℹ️ Table {RAW_USERS_TABLE} already exists, skipping creation")
+        client.get_table(DIM_RAW_USERS_TABLE)  # This will raise NotFound if table doesn't exist
+        print(f"ℹ️ Table {DIM_RAW_USERS_TABLE} already exists, skipping creation")
     except Exception as e:
         if "NotFound" in str(e):  # Table doesn’t exist, create it
             # Create table object with schema
-            table = bigquery.Table(RAW_USERS_TABLE, schema=schema)
+            table = bigquery.Table(DIM_RAW_USERS_TABLE, schema=schema)
             table = client.create_table(table)
-            print(f"✅ Table {RAW_USERS_TABLE} created successfully")
+            print(f"✅ Table {DIM_RAW_USERS_TABLE} created successfully")
         else:
             print(f"❌ Encountered errors: {e}")
 
 def ingest_to_bq(data):
     # Load to BigQuery
     try:
-        errors = client.insert_rows_json(RAW_USERS_TABLE_ID, data)
+        errors = client.insert_rows_json(DIM_RAW_USERS_TABLE_ID, data)
         if errors == []:
             print('✅ Users data ingested successfully')
         else:
@@ -66,7 +66,7 @@ def ingest_to_bq(data):
 
 def main():
     data = read_user_data()
-    create_bigquery_table(RAW_USERS_TABLE_ID)
+    create_bigquery_table(DIM_RAW_USERS_TABLE_ID)
     ingest_to_bq(data)
 
 main()

@@ -12,8 +12,8 @@ client = bigquery.Client()
 def ingest_to_bq(event):
     #Environments parameters
     PROJECT_ID = os.environ['PROJECT_ID']
-    TABLE_NAME_CF= os.environ['TABLE_NAME_CF']
-    table_id = f'{PROJECT_ID}.{TABLE_NAME_CF}'
+    FCT_RAW_CLOUD_FUNCT_EVENTS_TABLE= os.environ['FCT_RAW_CLOUD_FUNCT_EVENTS_TABLE']
+    table_id = f'{PROJECT_ID}.{FCT_RAW_CLOUD_FUNCT_EVENTS_TABLE}'
     
     # Ingest json Pub/Sub event to Bigquery
     try:

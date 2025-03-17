@@ -13,9 +13,9 @@ load_dotenv()
 client = bigquery.Client()
 
 # Define Constants
-RAW_USERS_TABLE = os.environ['RAW_USERS_TABLE_ID']
+DIM_RAW_USERS_TABLE = os.environ['DIM_RAW_USERS_TABLE']
 PROJECT_ID = os.environ['PROJECT_ID']
-RAW_USERS_TABLE_ID = f'{PROJECT_ID}.{RAW_USERS_TABLE}'
+RAW_USERS_TABLE_ID = f'{PROJECT_ID}.{DIM_RAW_USERS_TABLE}'
 
 NUM_OF_USERS = 4000
 URL = f'https://randomuser.me/api/?results={NUM_OF_USERS}'
