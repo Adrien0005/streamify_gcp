@@ -1,0 +1,51 @@
+{
+  "type": "record",
+  "name": "MusicEvent",
+  "fields": [
+    {
+      "name": "event_id",
+      "type": "long"
+    },
+    {
+      "name": "event_type",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "artist",
+      "type": "string"
+    },
+    {
+      "name": "album",
+      "type": "string"
+    },
+    {
+      "name": "datetime",
+      "type": "string"
+    },
+    {
+      "name": "coordinates",
+      "type": {
+        "type": "record",
+        "name": "Coordinates",
+        "fields": [
+          {
+            "name": "latitude",
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}

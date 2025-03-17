@@ -1,0 +1,80 @@
+[
+    {
+      "name": "event_id",
+      "mode": "REQUIRED",
+      "type": "INTEGER",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "event_type",
+      "mode": "REQUIRED",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "user_id",
+      "mode": "REQUIRED",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "title",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "artist",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "album",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "coordinates",
+      "mode": "NULLABLE",
+      "type": "RECORD",
+      "description": "",
+      "fields": [
+        {
+          "name": "latitude",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "longitude",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "name": "datetime",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "ingested_at",
+      "mode": "NULLABLE",
+      "type": "DATETIME",
+      "description": "",
+      "fields": []
+    }
+  ]

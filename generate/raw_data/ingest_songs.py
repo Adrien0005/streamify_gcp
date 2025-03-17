@@ -10,10 +10,11 @@ load_dotenv()
 
 DIM_RAW_SONGS_TABLE = os.environ['DIM_RAW_SONGS_TABLE']
 PROJECT_ID = os.environ['PROJECT_ID']
+BUCKET_NAME=os.environ['BUCKET_NAME']
 
 # Initialize GCS client and get the file from the bucket
 storage_client = storage.Client()
-bucket = storage_client.get_bucket("streamify_gcp")
+bucket = storage_client.get_bucket(BUCKET_NAME)
 blob = bucket.blob("songs_data.json")
 
 # Download the file content as a string and load it as JSON

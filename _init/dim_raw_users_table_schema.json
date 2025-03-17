@@ -1,0 +1,320 @@
+[
+    {
+      "name": "gender",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "User's gender",
+      "fields": []
+    },
+    {
+      "name": "name",
+      "mode": "NULLABLE",
+      "type": "RECORD",
+      "description": "",
+      "fields": [
+        {
+          "name": "title",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "first",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "last",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "name": "location",
+      "mode": "NULLABLE",
+      "type": "RECORD",
+      "description": "",
+      "fields": [
+        {
+          "name": "street",
+          "mode": "NULLABLE",
+          "type": "RECORD",
+          "description": "",
+          "fields": [
+            {
+              "name": "number",
+              "mode": "NULLABLE",
+              "type": "INTEGER",
+              "description": "",
+              "fields": []
+            },
+            {
+              "name": "name",
+              "mode": "NULLABLE",
+              "type": "STRING",
+              "description": "",
+              "fields": []
+            }
+          ]
+        },
+        {
+          "name": "city",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "state",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "country",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "postcode",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "coordinates",
+          "mode": "NULLABLE",
+          "type": "RECORD",
+          "description": "",
+          "fields": [
+            {
+              "name": "latitude",
+              "mode": "NULLABLE",
+              "type": "STRING",
+              "description": "",
+              "fields": []
+            },
+            {
+              "name": "longitude",
+              "mode": "NULLABLE",
+              "type": "STRING",
+              "description": "",
+              "fields": []
+            }
+          ]
+        },
+        {
+          "name": "timezone",
+          "mode": "NULLABLE",
+          "type": "RECORD",
+          "description": "",
+          "fields": [
+            {
+              "name": "offset",
+              "mode": "NULLABLE",
+              "type": "STRING",
+              "description": "",
+              "fields": []
+            },
+            {
+              "name": "description",
+              "mode": "NULLABLE",
+              "type": "STRING",
+              "description": "",
+              "fields": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "email",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "login",
+      "mode": "NULLABLE",
+      "type": "RECORD",
+      "description": "",
+      "fields": [
+        {
+          "name": "uuid",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "username",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "password",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "salt",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "md5",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "sha1",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "sha256",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "name": "dob",
+      "mode": "NULLABLE",
+      "type": "RECORD",
+      "description": "",
+      "fields": [
+        {
+          "name": "date",
+          "mode": "NULLABLE",
+          "type": "TIMESTAMP",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "age",
+          "mode": "NULLABLE",
+          "type": "INTEGER",
+          "description": "",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "name": "registered",
+      "mode": "NULLABLE",
+      "type": "RECORD",
+      "description": "",
+      "fields": [
+        {
+          "name": "date",
+          "mode": "NULLABLE",
+          "type": "TIMESTAMP",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "age",
+          "mode": "NULLABLE",
+          "type": "INTEGER",
+          "description": "",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "name": "phone",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "cell",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "id",
+      "mode": "NULLABLE",
+      "type": "RECORD",
+      "description": "",
+      "fields": [
+        {
+          "name": "name",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "value",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "name": "picture",
+      "mode": "NULLABLE",
+      "type": "RECORD",
+      "description": "",
+      "fields": [
+        {
+          "name": "large",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "medium",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        },
+        {
+          "name": "thumbnail",
+          "mode": "NULLABLE",
+          "type": "STRING",
+          "description": "",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "name": "nat",
+      "mode": "NULLABLE",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    }
+  ]

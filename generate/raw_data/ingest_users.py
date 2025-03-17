@@ -16,10 +16,11 @@ storage_client = storage.Client()
 DIM_DIM_RAW_USERS_TABLE = os.environ['DIM_DIM_RAW_USERS_TABLE']
 PROJECT_ID = os.environ['PROJECT_ID']
 DIM_RAW_USERS_TABLE_ID = f'{PROJECT_ID}.{DIM_DIM_RAW_USERS_TABLE}'
+BUCKET_NAME=os.environ['BUCKET_NAME']
 
 def read_user_data():
     # Get all files matching 'users_data_*.json' from the bucket
-    bucket = storage_client.get_bucket("streamify_gcp")
+    bucket = storage_client.get_bucket(BUCKET_NAME)
     blobs = bucket.list_blobs(prefix="users_", delimiter=None)
     
     # Combine data from all matching files
@@ -31,12 +32,12 @@ def read_user_data():
             print(f"ℹ️ Loaded {blob.name}")
     
     if not all_data:
-        raise ValueError("No matching users_data_*.json files found in gs://streamify_gcp")
+        raise ValueError(f"No matching users_data_*.json files found in gs://{BUCKET_NAME}")
     return all_data
 
 def create_bigquery_table(DIM_RAW_USERS_TABLE):
     # Read schema from GCS
-    bucket = storage_client.get_bucket("streamify_gcp")
+    bucket = storage_client.get_bucket(BUCKET_NAME)
     schema_blob = bucket.blob("users_data_schema.json")
     schema = json.loads(schema_blob.download_as_string())
     

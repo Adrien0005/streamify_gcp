@@ -14,6 +14,7 @@ load_dotenv()
 
 PROJECT_ID = os.environ['PROJECT_ID']
 PUBUSB_TOPIC = os.environ['PUBUSB_TOPIC']
+BUCKET_NAME=os.environ['BUCKET_NAME']
 
 # MQTT Broker Configuration (No Auth)
 MQTT_BROKER = os.environ['MQTT_BROKER']
@@ -22,13 +23,13 @@ MQTT_TOPIC = os.environ['MQTT_TOPIC']
 
 # Initialize GCS Client
 storage_client = storage.Client()
-bucket = storage_client.get_bucket("streamify_gcp")
+bucket = storage_client.get_bucket("BUCKET_NAME")
 
-# Load songs from gs://streamify_gcp/songs_data.json
+# Load songs from gs://BUCKET_NAME/songs_data.json
 songs_blob = bucket.blob("songs_data.json")
 songs = json.loads(songs_blob.download_as_string())
 
-# Load all users from gs://streamify_gcp/users_data_*.json
+# Load all users from gs://BUCKET_NAME/users_data_*.json
 users = []
 blobs = bucket.list_blobs(prefix="users_data", delimiter=None)
 for blob in blobs:
@@ -38,7 +39,7 @@ for blob in blobs:
         print(f"ℹ️ Loaded {blob.name}")
 
 if not users:
-    raise ValueError("No matching users_data_*.json files found in gs://streamify_gcp")
+    raise ValueError("No matching users_data_*.json files found in gs://BUCKET_NAME")
 
 # Loads possible events
 events = ['login', 'play', 'pause', 'next', 'previous']
