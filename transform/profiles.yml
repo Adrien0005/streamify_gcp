@@ -7,8 +7,7 @@ streamify:
       location: US
       method: oauth
       priority: interactive
-      project: dt-dta-adrien-sandbox-dev
-      #project: "{{ env_var('DBT_GCP_PROJECT') }}"
+      project: "{{ env_var('PROJECT_ID') }}"
       threads: 4
       type: bigquery
     prod:
@@ -18,8 +17,7 @@ streamify:
       location: US
       method: oauth
       priority: interactive
-      project: dt-dta-adrien-sandbox-dev
-      #project: "{{ env_var('DBT_GCP_PROJECT') }}"
+      project: "{{ env_var('PROJECT_ID') }}"
       threads: 4
       type: bigquery
   target: dev
