@@ -66,7 +66,7 @@ gcloud functions deploy ingest-from-pubsub \
   --runtime=python39 \
   --trigger-topic=${PUBSUB_TOPIC} \
   --entry-point=ingest_to_bq \
-  --source=./cf_to_bigquery.py \
+  --source=./cloud_function/ \
   --region=${REGION} \
   --project=${PROJECT_ID} \
   --set-env-vars="PROJECT_ID=${PROJECT_ID},PUBSUB_TOPIC=${PUBSUB_TOPIC}"
@@ -76,7 +76,7 @@ gcloud dataflow jobs run pubsub-to-bigquery \
   --gcs-location=gs://dataflow-templates-${REGION}/latest/PubSub_to_BigQuery \
   --project=${PROJECT_ID} \
   --region=${REGION} \
-  --parameters="inputTopic=projects/${PROJECT_ID}/topics/${PUBSUB_TOPIC},outputTable=${PROJECT_ID}:${FCT_RAW_DATAFLOW_EVENTS_TABLE}"
+  --parameters="inputTopic=projects/${PROJECT_ID}/topics/${PUBSUB_TOPIC},outputTableSpec=${PROJECT_ID}:${RAW_DATASET}.dataflow_music_events"
 
 # 8. Build and push container to Google Container Registry
 gcloud builds submit --tag gcr.io/${PROJECT_ID}/${CLOUD_RUN_NAME}:latest
