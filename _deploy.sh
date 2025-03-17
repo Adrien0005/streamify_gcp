@@ -15,7 +15,7 @@ gcloud storage buckets create gs://${BUCKET_NAME} \
 # Create dataset
 bq mk -d \
   --project_id=${PROJECT_ID} \
-  ${PROJECT_ID}:raw_music_event
+  ${PROJECT_ID}:${RAW_DATASET}
 
 # Create tables with schemas
 bq mk \
