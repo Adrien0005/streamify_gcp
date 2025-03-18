@@ -79,6 +79,8 @@ gcloud dataflow jobs run pubsub-to-bigquery \
   --parameters="inputTopic=projects/${PROJECT_ID}/topics/${PUBSUB_TOPIC},outputTableSpec=${PROJECT_ID}:${RAW_DATASET}.dataflow_music_events"
 
 # 8. Build and push container to Google Container Registry
+cd ..
+
 gcloud builds submit --tag gcr.io/${PROJECT_ID}/${CLOUD_RUN_NAME}:latest
 
 # 9. Deploy Cloud Run job
