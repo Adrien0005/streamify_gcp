@@ -114,6 +114,7 @@ This project is useful for:
 - Use IaC (Terraform) for GCP setup
 - Improve the event generator
 - Deploy GCP Workflows for advanced serverless orchestration needs
+- Build a Bigquery table to monitor GCP service cost in the dashboard
 
 ## Acknowledgments
 - Original inspiration from [ankurchavda/streamify](https://github.com/ankurchavda/streamify)
