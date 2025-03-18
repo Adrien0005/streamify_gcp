@@ -6,7 +6,7 @@ A data engineering personal project inspired by [ankurchavda/streamify](https://
 
 ### Core Purpose
 Compare and analyze two different streaming approaches in GCP for real-time data ingestion to BigQuery:
-- Cloud Functions using python function
+- Cloud Functions using python
 - Dataflow using GCP template
 
 The project simulates a music streaming service's events to help you make informed decisions about which streaming solution best fits your use case based on:
