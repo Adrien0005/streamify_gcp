@@ -62,12 +62,20 @@ DBT_DATASET_PROD=streamify
 ./_deploy.sh
 ```
 
-4. **Generate Events**
+4. **Generate and Ingest Fake Raw Data**
+```bash
+python generate/raw_data/generate_users.py
+python generate/raw_data/ingest_users.py
+python generate/raw_data/ingest_songs.py
+
+```
+
+5. **Generate Events**
 ```bash
 python generate/generate_events.py
 ```
 
-5. **Monitor Results**
+6. **Monitor Results**
 - Use MQTT client to watch real-time events
 - Check BigQuery tables for ingested data
 - Compare performance metrics between Cloud Functions and Dataflow
@@ -78,8 +86,7 @@ streamify_gcp/
 ├── _deploy.sh              # Infrastructure deployment
 ├── _init/                  # Schemas and raw data required for initialization
 ├── generate/               # Event generation
-├── transform/              # dbt transformations
-└── monitoring/            # Performance monitoring
+└── transform/              # dbt transformations
 ```
 
 ## Use Cases
@@ -87,7 +94,7 @@ streamify_gcp/
 This project is useful for:
 - Learning about GCP's data streaming capabilities
 - Understanding real-time data ingestion patterns
-- Benchmarking streaming performance
+- Benchmarking streaming performance & cost
 
 ## Getting Started
 
@@ -96,11 +103,17 @@ This project is useful for:
    - Python 3.9 or higher
    - Google Cloud SDK installed
    - Docker installed (for local development)
+   - Cloud build setup in GCP console for auto re-deploy of the cloud run container on udpdate
 
 2. Follow the Quick Start guide above
 
 ## Dashboard & Monitoring
 ![Streamify Dashboard](images/dashboard.png)
+
+## Going further
+- Use IaC (Terraform) for GCP setup
+- Improve the event generator
+- Deploy GCP Workflows for advanced serverless orchestration needs
 
 ## Acknowledgments
 - Original inspiration from [ankurchavda/streamify](https://github.com/ankurchavda/streamify)
