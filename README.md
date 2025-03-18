@@ -1,32 +1,36 @@
 # Streamify GCP - Streaming Solutions Comparison
 
-A data engineering personal project inspired by [ankurchavda/streamify](https://github.com/ankurchavda/streamify), redesigned to compare different GCP streaming solutions for real-time data ingestion. This project helps engineers evaluate Cloud Functions vs Dataflow for their streaming needs while providing real-time monitoring capabilities.
+A data engineering personal project inspired by [ankurchavda/streamify](https://github.com/ankurchavda/streamify), redesigned to compare different GCP streaming solutions for real-time data ingestion. This project can helps engineers evaluate Cloud Functions vs Dataflow for their streaming needs while providing real-time monitoring capabilities. The volume of events per second can be controled in the python event generators script.
 
 ## Project Overview
 
 ### Core Purpose
 Compare and analyze two different streaming approaches in GCP for real-time data ingestion to BigQuery:
-- Cloud Functions (serverless, simple setup)
-- Dataflow (managed streaming, scalable)
+- Cloud Functions using python function
+- Dataflow using GCP template
 
 The project simulates a music streaming service's events to help you make informed decisions about which streaming solution best fits your use case based on:
-- Event volume handling
-- Latency
-- Cost implications
+- Events volume
+- Latency requirements
+- Cost
 - Scalability
 
+The fake events are generated in the `generate/generate_event.py` script. Random users data are generated through the API [randomuser](https://randomuser.me/).
+
 ### Key Features
-- Simultaneous event streaming to:
+- Create a Bigquery DIM tables for songs and users
+- Generate X events per seconds
+- Simultaneous stream events to:
   - MQTT broker for real-time monitoring
   - Cloud Pub/Sub for data processing
 - Parallel ingestion paths to BigQuery via:
-  - Cloud Functions (serverless path)
-  - Dataflow (managed streaming path)
+  - Cloud Functions 
+  - Dataflow 
 - Performance monitoring and comparison metrics
-- dbt incremental transformations for analytics
+- dbt hourly incremental run creating a One Big Table schema for performant analytic
 
 ### Architecture
-![Architecture Diagram](diagram.png)
+![Architecture Diagram](images/diagram.png)
 
 ## Quick Start
 
@@ -96,7 +100,7 @@ This project is useful for:
 2. Follow the Quick Start guide above
 
 ## Dashboard & Monitoring
-![Streamify Dashboard](dashboard.png)
+![Streamify Dashboard](images/dashboard.png)
 
 ## Acknowledgments
 - Original inspiration from [ankurchavda/streamify](https://github.com/ankurchavda/streamify)
