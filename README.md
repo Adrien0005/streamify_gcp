@@ -46,13 +46,32 @@ source venv/bin/activate
 2. **Configure Environment Variables**
 Create a `.env` file with the following variables:
 ```
+# GCP Project Configuration
 PROJECT_ID=your-project-id
-PUBSUB_TOPIC=your-topic-name
+REGION=region-of-choice
+CLOUD_RUN_NAME=dbt-streamify
+
+# Pub/Sub Configuration
+PUBSUB_TOPIC=streamify-events
+PUBSUB_SUBSCRIPTION=streamify-subscription
+
+# MQTT Configuration
 MQTT_BROKER=your-mqtt-broker
 MQTT_PORT=1883
 MQTT_TOPIC=your/mqtt/topic
+
+# Storage Configuration
 BUCKET_NAME=your-bucket-name
-RAW_DATASET=raw_music_event
+
+# BigQuery Configuration
+RAW_DATASET=raw_music_events
+FCT_RAW_DATAFLOW_EVENTS_TABLE=raw_music_events.fct_raw_dataflow_events
+FCT_RAW_CLOUD_FUNCT_EVENTS_TABLE=raw_music_events.fct_raw_cloud_funct_events
+DIM_RAW_SONGS_TABLE=raw_music_events.dim_raw_songs
+DIM_RAW_USERS_TABLE=raw_music_events.dim_raw_users
+DIM_DIM_RAW_USERS_TABLE=raw_music_events.dim_raw_users
+
+# dbt Configuration
 DBT_DATASET_DEV=streamify_dev
 DBT_DATASET_PROD=streamify
 ```

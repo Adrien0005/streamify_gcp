@@ -1,7 +1,7 @@
 streamify:
   outputs:
     dev:
-      dataset: streamify_dev
+      dataset: "{{ env_var('DBT_DATASET_DEV') }}"
       job_execution_timeout_seconds: 300
       job_retries: 1
       location: US
@@ -11,7 +11,7 @@ streamify:
       threads: 4
       type: bigquery
     prod:
-      dataset: streamify
+      dataset: "{{ env_var('DBT_DATASET_PROD') }}"
       job_execution_timeout_seconds: 300
       job_retries: 1
       location: US

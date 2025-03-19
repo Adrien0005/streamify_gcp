@@ -87,7 +87,8 @@ gcloud builds submit --tag gcr.io/${PROJECT_ID}/${CLOUD_RUN_NAME}:latest
 gcloud run jobs create ${CLOUD_RUN_NAME} \
   --image gcr.io/${PROJECT_ID}/${CLOUD_RUN_NAME}:latest \
   --region ${REGION} \
-  --project=${PROJECT_ID}
+  --project=${PROJECT_ID} \
+  --set-env-vars="PROJECT_ID=${PROJECT_ID},DBT_DATASET_PROD=${DBT_DATASET_PROD},DBT_DATASET_DEV=${DBT_DATASET_DEV}"
 
 # 10. Schedule the dbt run
 gcloud scheduler jobs create http dbt-scheduler-job \
