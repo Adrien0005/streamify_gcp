@@ -18,13 +18,13 @@ The project simulates a music streaming service's events to help you make inform
 The fake events are generated in the `generate/generate_event.py` script. Random users data are generated through the API [randomuser](https://randomuser.me/).
 
 ### Key Features
-- Create a Bigquery DIM tables for songs and users
-- Generate X events per seconds
+- Create a Bigquery DIM table for songs and users
+- Generate X events per second
 - Simultaneous stream events to:
   - MQTT broker for real-time monitoring
   - Cloud Pub/Sub for data processing
 - Parallel ingestion paths to BigQuery via:
-  - Cloud Functions 
+  - Cloud Function 
   - Dataflow 
 - Performance monitoring and comparison metrics
 - dbt hourly incremental run creating a One Big Table schema for performant analytic
