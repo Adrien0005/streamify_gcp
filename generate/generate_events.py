@@ -23,7 +23,7 @@ MQTT_TOPIC = os.environ['MQTT_TOPIC']
 
 # Initialize GCS Client
 storage_client = storage.Client()
-bucket = storage_client.get_bucket("BUCKET_NAME")
+bucket = storage_client.get_bucket(BUCKET_NAME)
 
 # Load songs from gs://BUCKET_NAME/songs_data.json
 songs_blob = bucket.blob("songs_data.json")
@@ -107,7 +107,9 @@ def worker():
         event = generate_event(songs, users)
         publish_event_pubsub(event)
         publish_event_mqtt(event)
-        time.sleep(interval)
+        # Random sleep between 50% and 150% of the base interval
+        random_interval = interval * random.uniform(0.2, 1.5)
+        time.sleep(random_interval)
 
 # Use ThreadPoolExecutor to run two workers
 with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
