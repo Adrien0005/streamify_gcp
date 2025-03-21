@@ -3,6 +3,7 @@ from zoneinfo import ZoneInfo
 import time
 import json
 import random
+import math
 import os
 from dotenv import load_dotenv
 from google.cloud import pubsub_v1
@@ -45,9 +46,10 @@ if not users:
 # Loads possible events
 events = ['login', 'play', 'pause', 'next', 'previous']
 
-# Define events volume
-events_per_second = 10
-interval = 1.0 / events_per_second
+# Define event rate range (events per second)
+LOW_RATE = 50    # Minimum during quiet periods
+HIGH_RATE = 1000 # Maximum during busy periods
+PERIOD = 600     # Seconds for one full cycle (10 minutes)
 
 # Initialize Pub/Sub publisher client
 publisher = pubsub_v1.PublisherClient()
@@ -90,6 +92,7 @@ def publish_event_pubsub(event):
         message_bytes = message_json.encode("utf-8")
         
         publisher.publish(topic_path, message_bytes)
+        print('Published message to Pub/Sub')
     except Exception as e:
         print(f'Failed to publish message: {e}')
 
@@ -98,20 +101,30 @@ def publish_event_mqtt(event):
         # Publishes a JSON message to MQTT
         message_json = json.dumps(event)
         client.publish(MQTT_TOPIC, message_json)
+        print('Published message to MQTT')
     except Exception as e:
         print(f'Failed to publish message: {e}')
 
 def worker():
     while True:
-        event = generate_event(songs, users)
-        publish_event_pubsub(event)
-        publish_event_mqtt(event)
-        # Random sleep between 50% and 150% of the base interval
-        random_interval = interval * random.uniform(0.5, 2)
-        time.sleep(random_interval)
+        # Define the random interval 
+        try:
+            elapsed = time.time() - start_time
+            rate = LOW_RATE + (HIGH_RATE - LOW_RATE) * (0.5 + 0.5 * math.sin(2 * math.pi * elapsed / PERIOD))
+            interval = 1.0 / rate
+            random_interval = interval * random.uniform(0.8, 1.2)
+            
+            event = generate_event(songs, users)
+            publish_event_pubsub(event)
+            publish_event_mqtt(event)
+            time.sleep(random_interval)
+        except Exception as e:
+            print(e)
 
 # Use ThreadPoolExecutor to run two workers
 with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+    start_time = time.time()
+    
     print('Running on 2 workers...')
     # Submit the worker function twice
     executor.submit(worker)
