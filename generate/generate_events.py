@@ -69,7 +69,7 @@ def generate_event(songs, users):
     user = random.choice(users)
     song = random.choice(songs)
     event = random.choice(events)
-    timestamp = str(datetime.now(ZoneInfo('America/New_York')))
+    timestamp = str(datetime.now(ZoneInfo('America/New_York')))[:26]
     
     event = {
         'event_id': create_surrogate_key(event, user, timestamp),
@@ -107,7 +107,7 @@ def worker():
         publish_event_pubsub(event)
         publish_event_mqtt(event)
         # Random sleep between 50% and 150% of the base interval
-        random_interval = interval * random.uniform(0.2, 1.5)
+        random_interval = interval * random.uniform(0.5, 2)
         time.sleep(random_interval)
 
 # Use ThreadPoolExecutor to run two workers
