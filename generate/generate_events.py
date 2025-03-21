@@ -47,9 +47,9 @@ if not users:
 events = ['login', 'play', 'pause', 'next', 'previous']
 
 # Define event rate range (events per second)
-LOW_RATE = 50    # Minimum during quiet periods
+LOW_RATE = 10    # Minimum during quiet periods
 HIGH_RATE = 1000 # Maximum during busy periods
-PERIOD = 600     # Seconds for one full cycle (10 minutes)
+PERIOD = 1200    # Seconds for one full cycle (10 minutes)
 
 # Initialize Pub/Sub publisher client
 publisher = pubsub_v1.PublisherClient()
@@ -71,7 +71,7 @@ def generate_event(songs, users):
     user = random.choice(users)
     song = random.choice(songs)
     event = random.choice(events)
-    timestamp = str(datetime.now(ZoneInfo('America/New_York')))[:26]
+    timestamp = datetime.now(ZoneInfo('America/New_York')).strftime('%Y-%m-%d %H:%M:%S.%f')
     
     event = {
         'event_id': create_surrogate_key(event, user, timestamp),
@@ -92,7 +92,6 @@ def publish_event_pubsub(event):
         message_bytes = message_json.encode("utf-8")
         
         publisher.publish(topic_path, message_bytes)
-        print('Published message to Pub/Sub')
     except Exception as e:
         print(f'Failed to publish message: {e}')
 
@@ -101,7 +100,6 @@ def publish_event_mqtt(event):
         # Publishes a JSON message to MQTT
         message_json = json.dumps(event)
         client.publish(MQTT_TOPIC, message_json)
-        print('Published message to MQTT')
     except Exception as e:
         print(f'Failed to publish message: {e}')
 
