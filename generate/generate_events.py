@@ -89,7 +89,6 @@ def publish_event_pubsub(event):
         message_bytes = message_json.encode("utf-8")
         
         publisher.publish(topic_path, message_bytes)
-        print('Published to Pub/Sub')
     except Exception as e:
         print(f'Failed to publish message: {e}')
 
@@ -98,7 +97,6 @@ def publish_event_mqtt(event):
         # Publishes a JSON message to MQTT
         message_json = json.dumps(event)
         client.publish(MQTT_TOPIC, message_json)
-        print('Published to MQTT')
     except Exception as e:
         print(f'Failed to publish message: {e}')
 
