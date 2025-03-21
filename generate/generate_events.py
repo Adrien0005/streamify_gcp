@@ -1,4 +1,5 @@
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import time
 import json
 import random
@@ -68,7 +69,7 @@ def generate_event(songs, users):
     user = random.choice(users)
     song = random.choice(songs)
     event = random.choice(events)
-    timestamp = str(datetime.now())
+    timestamp = str(datetime.now(ZoneInfo('America/New_York')))
     
     event = {
         'event_id': create_surrogate_key(event, user, timestamp),
