@@ -42,6 +42,3 @@ models:
     +schema: streamify_dbt_artifacts # optional, default is your target schema
     staging:
       +schema: streamify_dbt_artifacts # optional, default is your target schema
-
-on-run-end:
-  - "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
